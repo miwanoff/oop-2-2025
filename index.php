@@ -39,6 +39,10 @@ class MyCat extends Cat
     protected function eat(){
         echo "\nChrum-chrum";
     }
+
+    public function __toString() {
+        return "\n{$this->name} {$this->age}";
+    }
 }
 
 class MyCatMeow extends MyCat
@@ -55,18 +59,22 @@ class MyCatMeow extends MyCat
     }
 }
 
-$kitty = new MyCat(5);
+$kitty = new MyCat(5, "Machka");
 echo $kitty->age;
 $kitty->add_age();
 echo $kitty->age;
+echo $kitty->name;
+echo $kitty;
 
 $kitty->sleep();
 // $kitty->eat();
 
-// $kitty1 = new MyCatMeow(5);
-// echo $kitty1->age;
-// $kitty1->add_age();
-// echo $kitty1->age;
+$kitty1 = new MyCatMeow(5, "Karfa");
+echo $kitty1->age;
+$kitty1->add_age();
+echo $kitty1->age;
+echo $kitty1->name;
+echo $kitty1;
 
-// $kitty1->meow();
-// $kitty1->sleep();
+$kitty1->meow();
+$kitty1->sleep();

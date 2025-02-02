@@ -13,6 +13,11 @@ class Cat
     {
         $this->age++;
     }
+
+    public function getstr() {
+		$str = "\nВік кота: {$this->age}.";
+		return $str;
+	}
 }
 
 // $kitty = new Cat(5);
@@ -40,6 +45,12 @@ class MyCat extends Cat
         echo "\nChrum-chrum";
     }
 
+    public function getstr() {
+        $str = parent::getstr();        
+		$str .= "\nІм'я кота: {$this->name}.";
+		return $str;
+	}
+
     public function __toString() {
         return "\n{$this->name} {$this->age}";
     }
@@ -57,6 +68,14 @@ class MyCatMeow extends MyCat
     {
         echo "\nZz...";
     }
+
+    function getstr() {
+		$str = parent::getstr ();
+
+		//$str .= "\nВік: {$this->age} років.";
+        $str .= " I can meow";
+		return $str;
+	}
 }
 
 $kitty = new MyCat(5, "Machka");
@@ -65,6 +84,7 @@ $kitty->add_age();
 echo $kitty->age;
 echo $kitty->name;
 echo $kitty;
+echo $kitty->getstr();
 
 $kitty->sleep();
 // $kitty->eat();
@@ -78,3 +98,4 @@ echo $kitty1;
 
 $kitty1->meow();
 $kitty1->sleep();
+echo $kitty1->getstr();

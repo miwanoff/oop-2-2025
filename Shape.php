@@ -1,4 +1,4 @@
-<?php
+d<?php
 
 class Shape
 {
@@ -33,7 +33,8 @@ class RectangleDrawer extends Shape
 
     public function draw()
     {
-        echo "Малюємо прямокутник: параметри: " . $this->x . " " . $this->y . " " . $this->width . " " . $this->height . "\n";
+        // echo "Малюємо прямокутник: параметри: " . $this->x . " " . $this->y . " " . $this->width . " " . $this->height . "\n";
+        echo "<div style='position:absolute;top:{$this->y}px;left:{$this->x}px;width:{$this->width}px;height:{$this->height}px;border:solid red;'></div>";
     }
 }
 class CircleDrawer extends Shape
@@ -53,14 +54,14 @@ class CircleDrawer extends Shape
     }
 }
 
-$rect1   = new RectangleDrawer(1, 2, 3, 4);
-$rect2   = new RectangleDrawer(5, 6, 7, 8);
-$circle3 = new CircleDrawer(15, 16, 3);
-$circle4 = new CircleDrawer(25, 26, 6);
+$rect1   = new RectangleDrawer(100, 200, 300, 400);
+$rect2   = new RectangleDrawer(500, 600, 700, 800);
+$circle3 = new CircleDrawer(150, 160, 30);
+$circle4 = new CircleDrawer(250, 260, 60);
 $shapes  = [$rect1, $rect2, $circle3, $circle4];
 
 foreach ($shapes as $shape) {
-    echo $shape->draw();
+    // echo $shape->draw();
     $shape->move();
     echo $shape->draw();
 }

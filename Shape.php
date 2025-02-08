@@ -1,6 +1,6 @@
-d<?php
+<?php
 
-class Shape
+abstract class Shape
 {
     protected $x;
     protected $y;
@@ -11,6 +11,8 @@ class Shape
         $this->y = $y;
     }
 
+    abstract public function draw();
+
     public function move($x = 0, $y = 0)
     {
         echo "Рухаємо фігуру: старі координати $this->x $this->y Нові координати $x $y";
@@ -18,6 +20,8 @@ class Shape
         $this->y = $y;
     }
 }
+
+//$s = new Shape (2,4);
 
 class RectangleDrawer extends Shape
 {

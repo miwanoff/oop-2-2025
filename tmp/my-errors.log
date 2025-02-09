@@ -1,1 +1,5 @@
-Помилка 2, файл C:\xampp\htdocs\projects-2024\oop-2\error.php, рядок 19: fopen(spoon.txt): Failed to open stream: `г' is not a valid mode for fopen
+Errors!ErrorException: fopen(spoon.txt): Failed to open stream: `г' is not a valid mode for fopen in C:\xampp\htdocs\projects-2024\oop-2\error-try.php:55
+Stack trace:
+#0 [internal function]: myErrorHandler(2, 'fopen(spoon.txt...', 'C:\\xampp\\htdocs...', 55)
+#1 C:\xampp\htdocs\projects-2024\oop-2\error-try.php(55): fopen('spoon.txt', '\xD0\xB3')
+#2 {main}

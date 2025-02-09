@@ -29,7 +29,17 @@ function myErrorHandler($errno, $msg, $file, $line) {
   set_error_handler("myErrorHandler");
   
 
+  function exception_handler($exception) {
+    echo "Неперехватываемое исключение: " , $exception->getMessage(), "\n";
+  }
+  
+  set_exception_handler('exception_handler');
+  
+
+
 $age = -2;
 if ($age < 0) {
-    trigger_error("Помилка користувача! Вік від'ємний!", E_USER_ERROR);
+    //trigger_error("Помилка користувача! Вік від'ємний!", E_USER_ERROR);
+    throw new Exception('Неперехватываемое исключение');
+    echo "Не выполнено\n";
 }
